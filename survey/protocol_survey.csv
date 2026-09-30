@@ -1,0 +1,46 @@
+Paper,Year,Venue,Dataset,Task,N_subjects,N_channels,Preprocessing,Feature_type,Freq_bands,Segment_length_s,CV_scheme,Threshold,Majority_baseline_pct,Majority_baseline_reported,Reported_acc_pct,Std,Code_available
+Khan et al. (meta-analysis),2025,arXiv,DEAP,binary V/A,32,32,various,various,various,various,k-fold / LOTO comparison,various,various,yes,53 (no seg) -> 99 (60 seg/trial),n/a,no
+Kukhilava et al. (EEGain),2025,arXiv,DEAP,binary V/A,32,32,standardized,DE,4 bands,1s,LOSO,5.0,57-59 (majority),yes,51-57 (4 models),n/a,yes
+STSNet (Li et al.),2023,Health Inf Sci Sys,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,5 bands (incl phantom delta 1-3Hz),4s/50% overlap,LOSO 32-fold,5.0,,no,69.38 / 71.88,n/r,no
+ATDD-LSTM (Du et al.),2020,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s non-overlapping,LOSO 32-fold (transductive),5.0,,no,69.06 / 72.97,+/-6.37/+/-6.57,no
+Pandey/Arjun et al.,2021,IEEE EMBC,DEAP,binary V/A,32,32,bandpass 4-45Hz,PSD,,4s/50% overlap,LOSO 32-fold,5.0,,no,65.9 / 69.5,+/-9.5/+/-9.7,no
+ASJDA (Liu et al.),2024,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,5 bands (incl phantom delta),4s (inferred),LOSO 32-fold,5 (>5 high / <5 low; =5 unspecified),n/r,no,68.30 / 69.31,+/-8.93/+/-11.26,yes
+DGAT (Ding et al.),2025,Front Psychiatry,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,theta/alpha/beta/gamma,4s,LOSO,n/r,n/r,no,84.27 / 83.84,+/-13.74/+/-10.20,no
+TANet (Wang et al.),2025,Brain Sciences,DEAP,binary V/A,32,32,n/r,DE+PSD,5 bands (delta/theta/alpha/beta/gamma; Hz n/r),3s,segment-level random 9:1,5,58.9 V / 56.6 A,yes,99.69 (seg) / 63.94 (1-fold),+/-3.83,no
+CogSci DualAttn (Zhang et al.),2024,CogSci 2024,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s,25-shot adaptation,5.0,,no,72.35 / 71.77,+/-5.79/+/-5.60,no
+SDA-DDA (Tang et al.),2025,arXiv,DEAP,binary V/A,32,32,STFT 5-band (DEAP-specific n/r),DE,5 bands (incl phantom delta),n/r,LOSO,n/r,n/r,no,61.44 / 62.86,+/-7.15/+/-10.58,no
+SSA-RF (Zhang et al.),2024,MBE,DEAP,binary (dimension n/r),32,32,baseline mean removed + 128Hz + 10s/50% overlap windowing,12 composite (9 time + 2 freq + 1 wavelet SE),5 bands (delta/theta/alpha/beta/gamma),10,15 random 25/7 subject splits,n/r,n/r,no,76.81,n/r,no
+DAMSDAN (Hu et al.),2025,arXiv,FACED,binary pos/neg,123,30,0.3-50Hz/200Hz,DE,5 bands,1s,10 source / 113 target subjects,stimulus,50.0,no,82.88,+/-7.71,yes
+MSHCL (Chang et al.),2025,IEEE TAFFC,FACED,binary pos/neg,123,30,200Hz downsampled (CLISA pipeline) + stratified norm + last 30s per video,DE from learned encoder + LDS,n/r (defers to CLISA),n/r (CLISA-inherited),10-fold subject CV (Chen protocol),stimulus,50.0,no,77.0,n/r,yes
+MSHCL (Chang et al.),2025,IEEE TAFFC,FACED,9-class,123,30,200Hz downsampled (CLISA pipeline) + stratified norm + last 30s per video,DE from learned encoder + LDS,n/r (defers to CLISA),n/r (CLISA-inherited),10-fold subject CV,stimulus,11.1,no,45.7,n/r,yes
+DAEST (Shen et al.),2025,IEEE TAFFC,FACED,binary pos/neg,123,30,official/complete,DE+CNN,5 bands,30s,10-fold subject CV,stimulus,50.0,no,81.7 / 75.5,+/-4.3/+/-5.5,yes
+DAEST (Shen et al.),2025,IEEE TAFFC,FACED,9-class,123,30,official/complete,DE+CNN,5 bands,30s,10-fold subject CV,stimulus,11.1,no,67.9 / 59.3,+/-7.3/+/-7.7,yes
+SDC-Net (Tang et al.),2025,arXiv,FACED,binary pos/neg,123,32,n/r (refs Chen 2023),DE via STFT,5 bands (delta/theta/alpha/beta/gamma),n/r,n/r in main text,stimulus,50.0,no,75.2,+/-8.46,yes
+SDC-Net (Tang et al.),2025,arXiv,FACED,9-class,123,32,n/r (refs Chen 2023),DE via STFT,5 bands (delta/theta/alpha/beta/gamma),n/r,LOSO single-session,stimulus,11.1,no,42.4,+/-6.55,yes
+EmT (Ding et al.),2025,IEEE TNNLS,FACED,binary valence (self-report),123,32,bandpass 0.05-47Hz + ICA at 250Hz,rPSD (Welch),7 bands (delta/theta/alpha/lowbeta/beta/highbeta/gamma),20s window 4s hop (sub-segment 2s/0.5s),leave-12-out 10-fold (n_FACED=12),self-report 3.0,n/r,no,60.8,F1=0.740,yes
+SVM baseline (Chen et al.),2023,Scientific Data,FACED,binary pos/neg,123,30,Chen preprocessing,DE,5 bands,1s,10-fold subject CV,stimulus,50.0,yes,69.3,+/-1.5 SE,yes
+SVM baseline (Chen et al.),2023,Scientific Data,FACED,9-class,123,30,Chen preprocessing,DE,5 bands,1s,10-fold subject CV,stimulus,11.1,yes,35.2,+/-1.0 SE,yes
+"CLISA (Shen et al.), result reported by Chen et al.",2023,Scientific Data,FACED,9-class,123,30,Chen preprocessing,contrastive embeddings,n/r,1s,10-fold subject CV,stimulus,11.1,yes,42.4,+/-1.2 SE,yes
+SOGNN (Li et al.),2021,Frontiers in Neurosci,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,no,86.81,+/-5.79,yes
+SOGNN (Li et al.),2021,Frontiers in Neurosci,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,no,75.27,+/-8.19,yes
+RGNN (Zhong et al.),2020,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,no,85.30,+/-6.72,yes
+RGNN (Zhong et al.),2020,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,no,73.84,+/-8.02,yes
+BiHDM (Li et al.),2021,IEEE TCDS,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,no,85.40,+/-7.53,yes
+BiHDM (Li et al.),2021,IEEE TCDS,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,no,69.03,+/-8.66,yes
+BiDANN-S (Li et al.),2018,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,no,83.28,+/-9.60,yes
+DAN (Li et al.),2018,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,no,83.81,+/-8.56,yes
+DAN (Li et al.),2018,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,no,58.87,+/-8.13,yes
+DGCNN (Song et al.),2020,IEEE TAFFC,SEED,3-class,15,62,SEED official ExtractedFeatures + per-subject z-score,DE,delta/theta/alpha/beta/gamma,1,LOSO 15-fold,n/a,33.3,no,79.95,9.02,yes
+DGCNN (Song et al.),2020,IEEE TAFFC,SEED-IV,4-class,15,62,SEED-IV official ExtractedFeatures,DE,delta/theta/alpha/beta/gamma,1,LOSO 15-fold,n/a,25.0,no,52.82,9.23,yes
+Kukhilava et al. (EEGain),2025,arXiv,DREAMER,binary V/A,23,14,standardized (EEGain framework),DE,theta/alpha/beta/gamma (4-band),1,LOSO 23-fold,>3 strict,~50,yes,60 V / 47 A,n/a,yes
+FBAGAN (Chen et al.),2024,J. Neurosci. Methods,DEAP,binary V/A,32,32,DEAP-preprocessed 4-45Hz @128Hz,DE,4 bands (no delta),1,LOSO 32-fold,5.0,57-59 (derived),no,65.18 V / 69.64 A,n/r,no
+SparseDGCNN (Zhang et al.),2023,IEEE TAFFC,DEAP,binary V/A,32,32,last 60s per trial,DE/PSD/DASM/RASM/ASM/DCAU sweep,4 bands (theta/alpha/beta/gamma),2s with 1s overlap,LOSO 32-fold,5.0,57-59 (derived),no,64.66 V / 66.65 A,n/r,n/r
+EPNNE (Zhang et al.),2024,IEEE JBHI,FACED,binary pos/neg,123,30,n/r,n/r,n/r,n/r,LOSO domain generalization,stimulus,50.0,no,82.81,+/-3.28,n/r
+CSCL (Alghamdi et al.),2025,Sci Reports,FACED,9-class,123,30,n/r,hyperbolic contrastive embeddings,n/r,n/r,10-fold sequential subject CV,stimulus,11.1,no,65.98,+/-4.09,no
+"DGCNN (Song et al.), result reported by DAMSDAN (Hu et al.)",2025,arXiv,FACED,binary pos/neg,123,30,Chen 2023 official,DE,5 bands,1,LOSO,stimulus,50.0,no,68.25,+/-7.92,yes
+PR-PL (Zhou et al.),2024,IEEE TAFFC,SEED,3-class,15,62,SEED official ExtractedFeatures,DE,5 bands,1,LOSO 15-fold,N/A,33.3,no,85.56,n/r,yes
+PR-PL (Zhou et al.),2024,IEEE TAFFC,SEED-IV,4-class,15,62,SEED-IV official ExtractedFeatures,DE,5 bands,1,LOSO 15-fold,N/A,25.0,no,74.92,n/r,yes
+DCGNN+CDAN (Xiao et al.),2025,IEEE TAFFC,SEED,3-class,15,62,SEED official ExtractedFeatures DE,DE,5 bands,1,LOSO 15-fold,N/A,33.3,no,88.12,+/-4.45,yes
+DCGNN+CDAN (Xiao et al.),2025,IEEE TAFFC,SEED-IV,4-class,15,62,SEED-IV official ExtractedFeatures,DE,5 bands,1,LOSO 15-fold,N/A,25.0,no,68.06,+/-10.09,yes
+AD-TCN (He et al.),2022,Comp. Biol. Med.,DREAMER,binary V/A,23,14,n/r,raw EEG (TCN encoder),N/A (end-to-end),n/r,LOSO 23-fold + adversarial DA,n/r (>3 assumed),~50-54 (derived),no,66.56 V / 63.69 A,n/r,no
+VBH-GNN (Liu et al.),2024,ICLR,DREAMER,binary V/A,23,14 (+ECG),downsample 128Hz; crop-after-split,raw EEG+ECG (heterogeneous graph),N/A (end-to-end),4,LOSO 23-fold w/ supervised DA on target (1/5 fold labeled),>3 strict (median),~50-54 (derived),no,73.38 V / 70.64 A,+/-4.21 V / +/-7.74 A,n/r
