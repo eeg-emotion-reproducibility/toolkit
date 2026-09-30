@@ -17,7 +17,7 @@ checklist, and the DGCNN code used as the supervised control.
 | `preprocessing/` | DE features from DAEST's preprocessed FACED signal; correlation between the two FACED pipelines; DEAP spectral content below 4 Hz | Section III-A |
 | `dgcnn/` | DGCNN training on DEAP, SEED and FACED | Sections III-B, III-C, IV-D; Tables 8, 9, 11 |
 | `survey/` | Protocol survey: 45 paper-by-dataset records | Section II-C; Table 3 |
-| `audits/` | Within-trial splitting in TorchEEG 1.1.2 | Section III-C |
+| `evaluation_protocols/` | Within-trial splitting in TorchEEG 1.1.2 | Section III-C |
 | `CHECKLIST.md` | Minimum reporting checklist | Section V |
 
 ## Data
@@ -83,7 +83,7 @@ validation data drawn from the training subjects; `--selection test` (DEAP, SEED
 
 ## TorchEEG splitters
 
-`audits/torcheeg_splitters.md` lists the TorchEEG 1.1.2 splitters that place windows of one trial
+`evaluation_protocols/torcheeg_splitters.md` lists the TorchEEG 1.1.2 splitters that place windows of one trial
 in both the training and the test set, with the source lines.
 
 ## License
