@@ -12,6 +12,9 @@ Each record describes the evaluation in the publication that reports the accurac
 publication is not the method's own paper, the `Paper` field says so ("result reported by ..."), and
 `Year` and `Venue` refer to the reporting publication.
 
+`Paper`, `Year`, `Venue` and `Dataset` identify a record, `Reported_acc_pct` and `Std` give its result, and the other twelve
+columns describe the protocol.
+
 | Column | Content |
 |---|---|
 | `Paper` | Method and authors |
