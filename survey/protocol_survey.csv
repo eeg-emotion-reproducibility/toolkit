@@ -1,6 +1,6 @@
 Paper,Year,Venue,Dataset,Task,N_subjects,N_channels,Preprocessing,Feature_type,Freq_bands,Segment_length_s,CV_scheme,Threshold,Majority_baseline_pct,Majority_baseline_reported,Reported_acc_pct,Std,Code_available
 Khan et al. (meta-analysis),2025,arXiv,DEAP,binary V/A,32,32,various,various,various,various,k-fold / LOTO comparison,various,various,yes,53 (no seg) -> 99 (60 seg/trial),n/a,no
-Kukhilava et al. (EEGain),2025,arXiv,DEAP,binary V/A,32,32,standardized,DE,4 bands,1s,LOSO,5.0,57-59 (majority),yes,51-57 (4 models),n/a,yes
+Kukhilava et al. (EEGain),2025,arXiv,DEAP,binary V/A,32,32,standardized,DE,4 bands,1s,LOSO,4.5 (<=4.5 low),57-59 (majority),yes,51-57 (4 models),n/a,yes
 STSNet (Li et al.),2023,Health Inf Sci Sys,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,5 bands (incl phantom delta 1-3Hz),4s/50% overlap,LOSO 32-fold,5.0,,no,69.38 / 71.88,n/r,no
 ATDD-LSTM (Du et al.),2020,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s non-overlapping,LOSO 32-fold (transductive),5.0,,no,69.06 / 72.97,+/-6.37/+/-6.57,no
 Pandey/Arjun et al.,2021,IEEE EMBC,DEAP,binary V/A,32,32,bandpass 4-45Hz,PSD,,4s/50% overlap,LOSO 32-fold,5.0,,no,65.9 / 69.5,+/-9.5/+/-9.7,no
